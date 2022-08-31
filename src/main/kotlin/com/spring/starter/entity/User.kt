@@ -5,10 +5,6 @@ import javax.persistence.*
 @Entity
 @Table(name = "user")
 class User (
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
-
     @Column(name = "userId", unique = true)
     val userId: String,
 
@@ -16,5 +12,8 @@ class User (
     val password: String
 
 ):BaseEntity() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0
 }
 
